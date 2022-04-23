@@ -21,7 +21,9 @@
   },
   "dependencies": {
     "electron-prompt": "^1.7.0",
+    "electron-window-position": "^1.0.1",
     "fs": "^0.0.1-security",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "splitting": "^1.0.6"
   }
 }

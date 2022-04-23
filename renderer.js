@@ -4,3 +4,5 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+// show a message with a type of the input
+

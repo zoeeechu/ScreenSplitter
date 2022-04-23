@@ -1,13 +1,38 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow, shell} = require('electron')
+const WindowPosition = require( 'electron-window-position' );
 const path = require('path')
 const prompt = require('electron-prompt');
 const fs = require('fs')
+//import { EMAIL } from "./client.js";
+
+function SetAction (form) {
+  const mainWindow = new BrowserWindow({
+    
+    width: 800,
+    height: 600,
+    title:"My First App",
+    frame:false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    }
+  })
+  mainWindow.loadFile('index.html')
+
+
+}
+
+
 
 
 function createWindow () {
   // Create the browser window.
+
+  const position = new WindowPosition();
+  var pos = position.getActiveScreenCenter(0,0);
   const mainWindow = new BrowserWindow({
+    x: pos.x, 
+    y: pos.y,
     width: 800,
     height: 600,
     webPreferences: {
@@ -15,23 +40,18 @@ function createWindow () {
     }
   })
 
-  fs.writeFile(app.getPath('userData'), "Hey there!", function(err) {
-    if(err) {
-        return console.log(err);
-    }
-    console.log("The file was saved!");
-}); 
-
 
 console.log(app.getPath('userData'))
   
+mainWindow.loadFile('index.html')
+mainWindow.setBackgroundColor("#000F1A")
   // and load the index.html of the app.
   //
   // load html
   //mainWindow.loadFile('index.html')
   //
   // load url
-  prompt({
+/*  prompt({
     title: 'Prompt example',
     label: 'URL:',
     value: 'http://example.org',
@@ -51,8 +71,8 @@ console.log(app.getPath('userData'))
     }
 })
 .catch(console.error);
- 
-mainWindow.loadURL("index.html")
+ */
+
 // mainWindow.setSize('10','10')
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
