@@ -20,6 +20,7 @@
     "electron": "^18.0.2"
   },
   "dependencies": {
+    "@electron/remote": "^2.0.8",
     "electron-prompt": "^1.7.0",
     "electron-window-position": "^1.0.1",
     "fs": "^0.0.1-security",

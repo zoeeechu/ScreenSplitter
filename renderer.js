@@ -5,4 +5,3 @@
 // selectively enable features needed in the rendering
 // process.
 // show a message with a type of the input
-

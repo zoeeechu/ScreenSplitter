@@ -4,25 +4,20 @@ const WindowPosition = require( 'electron-window-position' );
 const path = require('path')
 const prompt = require('electron-prompt');
 const fs = require('fs')
-//import { EMAIL } from "./client.js";
-
-function SetAction (form) {
-  const mainWindow = new BrowserWindow({
-    
-    width: 800,
-    height: 600,
-    title:"My First App",
-    frame:false,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
-    }
-  })
-  mainWindow.loadFile('index.html')
 
 
-}
+const {ipcMain} = require('electron')
 
+ipcMain.on('resize-window', (event, width, height, x, y, url1) => {
+    let browserWindow = BrowserWindow.fromWebContents(event.sender)
+    browserWindow.setSize(width,height)
+    browserWindow.setPosition(x,y)
+    browserWindow.loadURL(url1)
+})
 
+ipcMain.on('close-me', (evt, arg) => {
+  app.quit()
+})
 
 
 function createWindow () {
@@ -31,15 +26,24 @@ function createWindow () {
   const position = new WindowPosition();
   var pos = position.getActiveScreenCenter(0,0);
   const mainWindow = new BrowserWindow({
-    x: pos.x, 
-    y: pos.y,
+    title: "ScreenSplitter",
+    //x: pos.x, 
+   // y: pos.y,
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+      webSecurity: false
     }
   })
+ 
+  
+  
 
+  
 
 console.log(app.getPath('userData'))
   
