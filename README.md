@@ -1,4 +1,4 @@
-# ScreenSplitter
+# <img src="./logo.svg" width="40">creenSplitter
 
 **A cool electron powered app :zap:**
 
