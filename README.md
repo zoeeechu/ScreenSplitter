@@ -1,6 +1,6 @@
 # <img src="./logo.svg" width="40">creenSplitter
 
-**A cool electron powered app :zap:**
+**A cool electron powered app :electron: :zap:**
 
 ## What does it do?
 
