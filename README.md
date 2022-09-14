@@ -1,6 +1,6 @@
 # ScreenSplitter
 
-**A cool electron powered app :Thunderbolt:**
+**A cool electron powered app :zap:**
 
 ## What does it do?
 
