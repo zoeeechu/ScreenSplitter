@@ -2,8 +2,7 @@
 
 **A cool electron powered app :zap:**
 
-![Alt text](./logo.svg)
-<img src="./logo.svg">
+<img src="./logo.svg" width="40">
 
 ## What does it do?
 
