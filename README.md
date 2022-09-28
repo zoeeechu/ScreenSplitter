@@ -5,7 +5,8 @@
 ## What does it do?
 
 ``` 
-It allows you to open boarderless websites as windows in your desired H & W
+this simple tool allows you to open boarderless websites
+as windows in your desired width and hight
 ```
 
 
